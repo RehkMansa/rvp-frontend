@@ -1,6 +1,7 @@
 import HeaderAvatar from '@/Atoms/HeaderAvatar';
 import { HiOutlineLogout } from 'react-icons/hi';
 import { TfiWorld } from 'react-icons/tfi';
+import './index.css';
 
 const NavBarRight = () => (
 	<div className="header__right">

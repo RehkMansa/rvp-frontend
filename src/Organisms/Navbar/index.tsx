@@ -1,5 +1,5 @@
-import './index.css';
 import NavBarRight from '@/Molecules/NavBarRight';
+import './index.css';
 
 const links = [
 	{

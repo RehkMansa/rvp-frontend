@@ -32,9 +32,3 @@
 .header__nav .active {
 	color: var(--white);
 }
-.header__right {
-	margin-left: auto;
-	display: flex;
-	align-items: center;
-	gap: 16px;
-}
