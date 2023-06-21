@@ -1,0 +1,14 @@
+.header-avatar {
+	background-color: #12171d;
+	padding: 8px 16px;
+	border-radius: 8px;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	color: var(--grey);
+}
+
+.header-avatar h5 {
+	font-size: 14px;
+	font-weight: 500;
+}

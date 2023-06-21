@@ -1,6 +1,8 @@
+import HomePage from './Pages/Homepage';
+
 const App = () => (
 	<main>
-		<p>Hello world</p>
+		<HomePage />
 	</main>
 );
 

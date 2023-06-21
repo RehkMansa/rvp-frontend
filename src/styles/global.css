@@ -1,3 +1,9 @@
+:root {
+	--background: #1c2127;
+	--white: #fff;
+	--grey: #a7b1bc;
+}
+
 /*
   Josh's Custom CSS Reset
   https://www.joshwcomeau.com/css/custom-css-reset/
@@ -15,10 +21,14 @@ body {
 	height: 100%;
 }
 body {
-	line-height: 1.5;
+	line-height: 1.7;
 	-webkit-font-smoothing: antialiased;
 	font-family: 'Satoshi', sans-serif;
+	background-color: var(--background);
+	color: var(--white);
+	font-weight: 500;
 }
+
 img,
 picture,
 video,
@@ -45,4 +55,8 @@ h6 {
 #root,
 #__next {
 	isolation: isolate;
+}
+
+.flipX {
+	transform: scaleX(-1);
 }
