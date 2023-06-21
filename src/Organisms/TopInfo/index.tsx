@@ -1,6 +1,10 @@
+import TokenName from '@/Atoms/TokenName';
+import TokenInfo from '@/assets/tokeninfo.png';
+import './index.css';
+
 const TopInfo = () => (
 	<div className="topinfo">
-		<p>Hello world</p>
+		<TokenName name="BTC/USDT" icon={TokenInfo} />
 	</div>
 );
 

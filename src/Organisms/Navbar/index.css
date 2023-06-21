@@ -1,13 +1,14 @@
 .header {
 	display: flex;
 	align-items: center;
-	padding: 10px 10px;
+	padding: 10px 16px;
+	border-bottom: 1px solid #32383f;
 }
 
 .header__logo {
 	width: 100%;
 	max-width: 160px;
-	border-right: 1px solid rgb(167 177 188 / 0.3);
+	border-right: 1px solid rgb(167 177 188 / 0.18);
 }
 
 .header__logo img {
