@@ -1,10 +1,9 @@
-import TokenName from '@/Atoms/TokenName';
-import TokenInfo from '@/assets/tokeninfo.png';
+import CoinDropDown from '@/Molecules/CoinDropDown';
 import './index.css';
 
 const TopInfo = () => (
 	<div className="topinfo">
-		<TokenName name="BTC/USDT" icon={TokenInfo} />
+		<CoinDropDown />
 	</div>
 );
 

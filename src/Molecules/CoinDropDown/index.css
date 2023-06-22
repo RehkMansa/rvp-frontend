@@ -1,0 +1,15 @@
+.topinfo__token {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+}
+
+.topinfo__coin_dropdown__modal {
+	--dropdown-margin: 10px;
+	width: calc(95vw - var(--dropdown-margin));
+	max-width: 445px;
+	margin-left: var(--dropdown-margin);
+	padding: 8px 10px;
+	border-radius: 8px;
+	border: 1px solid var(--bg-darkMode-card);
+}

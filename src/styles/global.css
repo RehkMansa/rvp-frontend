@@ -2,6 +2,8 @@
 	--background: #1c2127;
 	--white: #fff;
 	--grey: #a7b1bc;
+	--bg-darkMode-card: #262932;
+	--bg-darkAlt: #20252b;
 }
 
 /*
@@ -42,6 +44,7 @@ button,
 textarea,
 select {
 	font: inherit;
+	color: inherit;
 }
 p,
 h1,
@@ -55,6 +58,13 @@ h6 {
 #root,
 #__next {
 	isolation: isolate;
+}
+
+button {
+	background-color: unset;
+	border: unset;
+	color: inherit;
+	outline: transparent;
 }
 
 .flipX {
