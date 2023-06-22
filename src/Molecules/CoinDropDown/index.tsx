@@ -11,10 +11,13 @@ const CoinDropDown = () => (
 	<div className="topinfo__coin_dropdown">
 		<DropDown.Root>
 			<DropDown.Trigger asChild>
-				<button className="topinfo__token" type="button">
-					<TokenName name="BTC/USDT" icon={TokenInfo} />
-					<FaChevronDown size={16} />
-				</button>
+				<div className="topinfo__coin_dropdown__trigger">
+					<button className="topinfo__token" type="button">
+						<TokenName name="BTC/USDT" icon={TokenInfo} />
+						<FaChevronDown size={16} />
+					</button>
+					<span className="text-green-alt ">$20,634</span>
+				</div>
 			</DropDown.Trigger>
 
 			<DropDown.Portal>
@@ -32,7 +35,7 @@ const CoinDropDown = () => (
 						))}
 					</div>
 					<DropDown.Item>
-						{Array.from({ length: 50 }).map((n, idx) => (
+						{Array.from({ length: 50 }).map((_n, idx) => (
 							<DropDownTokenRow
 								key={idx}
 								name="BTC-USDT"

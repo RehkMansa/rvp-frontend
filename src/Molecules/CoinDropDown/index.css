@@ -36,3 +36,13 @@
 	background-color: #353945;
 	border-radius: 20px;
 }
+
+.topinfo__coin_dropdown__trigger {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.topinfo__coin_dropdown__trigger span {
+	font-size: 18px;
+}

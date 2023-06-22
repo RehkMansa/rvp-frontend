@@ -4,4 +4,43 @@
 	margin: 8px;
 	border: 1px solid var(--bg-darkMode-card);
 	border-radius: 8px;
+	display: flex;
+	align-items: center;
+	gap: 32px;
+}
+
+.topinfo__content {
+	display: flex;
+	align-items: center;
+	gap: 24px;
+	width: 100%;
+	max-width: 800px;
+	border-left: 1px solid rgba(234, 240, 254, 0.09);
+	padding-left: 24px;
+}
+
+.topinfo__content__card {
+	max-width: 160px;
+	width: 100%;
+	border-right: 1px solid rgba(234, 240, 254, 0.09);
+	margin-inline: auto;
+}
+
+.topinfo__content__card:last-of-type {
+	border: none;
+}
+
+.topinfo__content__card p {
+	font-size: 14px;
+}
+
+.topinfo__content__card__icon {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.topinfo__content__card span {
+	font-size: 12px;
+	color: #a7b1bc;
 }
