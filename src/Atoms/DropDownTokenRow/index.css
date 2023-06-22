@@ -1,0 +1,25 @@
+.dropdown__row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+	font-size: 14px;
+	line-height: 16px;
+	color: var(--grey);
+	margin-bottom: 24px;
+}
+
+.dropdown__row > div {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	width: 100%;
+	justify-content: space-between;
+}
+
+.dropdown__row__right {
+	max-width: 140px;
+}
+.dropdown__row__left {
+	max-width: 165px;
+}

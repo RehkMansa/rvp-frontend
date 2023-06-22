@@ -12,4 +12,27 @@
 	padding: 8px 10px;
 	border-radius: 8px;
 	border: 1px solid var(--bg-darkMode-card);
+	height: 458px;
+	overflow-y: scroll;
+}
+
+.topinfo__coin_dropdown__modal__filter {
+	display: flex;
+	gap: 12px;
+	color: var(--grey);
+	padding: 8px;
+	border-top: 1px solid rgba(57, 64, 71, 0.5);
+	border-bottom: 1px solid rgba(57, 64, 71, 0.5);
+	margin-block: 16px;
+}
+
+.topinfo__coin_dropdown__modal__filter span {
+	font-size: 14px;
+	padding: 6px 12px;
+	min-width: 40px;
+}
+
+.topinfo__coin_dropdown__modal__filter .active {
+	background-color: #353945;
+	border-radius: 20px;
 }

@@ -70,3 +70,11 @@ button {
 .flipX {
 	transform: scaleX(-1);
 }
+
+.capitalize {
+	text-transform: capitalize;
+}
+
+.text-green {
+	color: #25c26e;
+}

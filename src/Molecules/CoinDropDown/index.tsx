@@ -1,9 +1,11 @@
 import TokenName from '@/Atoms/TokenName';
 import TokenInfo from '@/assets/tokeninfo.png';
-import './index.css';
 import { FaChevronDown } from 'react-icons/fa';
 import * as DropDown from '@radix-ui/react-dropdown-menu';
 import SearchBar from '@/Atoms/SearchBar';
+import DropDownTokenRow from '@/Atoms/DropDownTokenRow';
+import DropDownImage from '@/assets/dropdownlogo.png';
+import './index.css';
 
 const CoinDropDown = () => (
 	<div className="topinfo__coin_dropdown">
@@ -21,6 +23,25 @@ const CoinDropDown = () => (
 					className="topinfo__coin_dropdown__modal"
 				>
 					<SearchBar />
+
+					<div className="topinfo__coin_dropdown__modal__filter">
+						{['All', 'USD', 'BTC'].map((dd, idx) => (
+							<span className={idx === 0 ? 'active' : undefined}>
+								{dd}
+							</span>
+						))}
+					</div>
+					<DropDown.Item>
+						{Array.from({ length: 50 }).map((n, idx) => (
+							<DropDownTokenRow
+								key={idx}
+								name="BTC-USDT"
+								price="$23,234.6"
+								percentage="+0.005%"
+								img={DropDownImage}
+							/>
+						))}
+					</DropDown.Item>
 				</DropDown.Content>
 			</DropDown.Portal>
 		</DropDown.Root>
