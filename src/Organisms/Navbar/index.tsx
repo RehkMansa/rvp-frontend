@@ -25,7 +25,10 @@ const NavBar = () => (
 		<nav>
 			<ul className="header__nav">
 				{links.map(({ name, url }) => (
-					<li className={url === '/' ? 'active' : undefined}>
+					<li
+						key={name}
+						className={url === '/' ? 'active' : undefined}
+					>
 						{name}
 					</li>
 				))}

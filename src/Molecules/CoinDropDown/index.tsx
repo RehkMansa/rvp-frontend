@@ -29,7 +29,10 @@ const CoinDropDown = () => (
 
 					<div className="topinfo__coin_dropdown__modal__filter">
 						{['All', 'USD', 'BTC'].map((dd, idx) => (
-							<span className={idx === 0 ? 'active' : undefined}>
+							<span
+								key={dd}
+								className={idx === 0 ? 'active' : undefined}
+							>
 								{dd}
 							</span>
 						))}
