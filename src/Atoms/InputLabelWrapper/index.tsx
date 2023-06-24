@@ -16,6 +16,7 @@ const InputLabelWrapper = (props: Props) => {
 				<MdInfoOutline
 					size={13.5}
 					className="label_wrapper__label__icon"
+					width={13.5}
 				/>
 			</span>
 			{children}

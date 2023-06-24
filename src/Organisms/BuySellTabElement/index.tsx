@@ -2,11 +2,17 @@ import LimitForm from '@/Molecules/LimitForm';
 import { useState } from 'react';
 import * as Tabs from '@radix-ui/react-tabs';
 import BuySellMainFooter from '@/Molecules/BuySellMainFooter';
+import BuySellMarketForm from '@/Molecules/BuySellMarketForm';
+import BuySellStopLimit from '@/Molecules/BuySellStopLimit';
 
-const tabs = ['Limit', 'Market', 'Stop-Limit'];
+const tabs = [
+	{ name: 'Limit', component: LimitForm },
+	{ name: 'Market', component: BuySellMarketForm },
+	{ name: 'Stop-Limit', component: BuySellStopLimit },
+];
 
 const BuySellTabElement = () => {
-	const [activeTab, setActiveTab] = useState(tabs[0]);
+	const [activeTab, setActiveTab] = useState(tabs[0].name);
 
 	return (
 		<div className="buysell__tab">
@@ -15,20 +21,20 @@ const BuySellTabElement = () => {
 					{tabs.map((ele) => (
 						<Tabs.Trigger
 							className="buysell__tab__list--trigger"
-							key={ele}
-							value={ele}
+							key={ele.name}
+							value={ele.name}
 						>
-							{ele}
+							{ele.name}
 						</Tabs.Trigger>
 					))}
 				</Tabs.List>
 				{tabs.map((ele) => (
 					<Tabs.Content
 						className="buysell__tab__list--content"
-						key={ele}
-						value={ele}
+						key={ele.name}
+						value={ele.name}
 					>
-						<LimitForm />
+						<ele.component />
 					</Tabs.Content>
 				))}
 				<BuySellMainFooter />
