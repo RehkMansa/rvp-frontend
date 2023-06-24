@@ -39,7 +39,7 @@
 	opacity: 0.15000000596046448;
 }
 
-.orderbook__item__active {
+.orderbook__price_range {
 	display: flex;
 	align-items: center;
 	justify-content: center;

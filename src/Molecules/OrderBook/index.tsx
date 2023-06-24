@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import './index.css';
-import { BsArrowDownShort, BsArrowUpShort } from 'react-icons/bs';
-import Icon1 from '@/assets/hamburger-stacked.svg';
-import Icon2 from '@/assets/hamburger--2.svg';
-import Icon3 from '@/assets/hamburger--3.svg';
-import * as DropDown from '@radix-ui/react-dropdown-menu';
-import { FaChevronDown } from 'react-icons/fa';
+import OrderBookHeader from '@/Atoms/OrderBookAtoms/OrderBookHeader';
+import TabPanelHeader from '@/Atoms/TabPanelHeader';
+import OrderBookTopBar from '@/Atoms/OrderBookAtoms/OrderBookTopBar';
+import OrderBookRow from '@/Atoms/OrderBookAtoms/OrderBookRow';
+import OrderBookPriceRange from '@/Atoms/OrderBookAtoms/OrderBookPriceRange';
 
 interface Order {
 	price: number;
@@ -72,22 +71,6 @@ const OrderBook: React.FC = () => {
 
 	if (loading) return <div className="orderbook" />;
 
-	const determineWidth = (amount: number, volume: number): number => {
-		const tt = (Number(amount) * Number(volume)) / 250;
-
-		return tt >= 200
-			? tt / 3
-			: tt < 50
-			? tt * 10 >= 250
-				? tt * 5
-				: tt * 10
-			: tt;
-	};
-
-	const determineColor = (isBid: boolean): string => {
-		return isBid ? '#25C26E' : '#FF6838';
-	};
-
 	const { bids, asks } = orderBook;
 
 	const topBid = Number(bids[bids.length - 1].price);
@@ -96,106 +79,26 @@ const OrderBook: React.FC = () => {
 
 	return (
 		<div className="orderbook">
-			<div className="orderbook__switch text-gray">
-				<div className="orderbook__switch--active">Order Book</div>
-				<div>Recent trades</div>
-			</div>
-			<div className="orderbook__icons">
-				<img className="orderbook__icons--active" src={Icon1} alt="" />
-				<img src={Icon2} alt="" />
-				<img src={Icon3} alt="" />
-				<div className="orderbook__dropdown">
-					<DropDown.Root>
-						<DropDown.Trigger asChild>
-							<div className="orderbook__dropdown__trigger">
-								{activeFilter}
-								<FaChevronDown
-									size={12}
-									style={{ marginTop: 3 }}
-								/>
-							</div>
-						</DropDown.Trigger>
-
-						<DropDown.Portal>
-							<DropDown.Content className="orderbook__dropdown__content">
-								{[5, 10, 20, 30].map((n) => (
-									<DropDown.Item
-										onClick={() => setActiveFilter(n)}
-										key={n}
-										className="orderbook__dropdown__item"
-									>
-										<span>{n}</span>
-									</DropDown.Item>
-								))}
-							</DropDown.Content>
-						</DropDown.Portal>
-					</DropDown.Root>
-				</div>
-			</div>
-			<div className="orderbook__header">
-				<p>
-					Price
-					<br />
-					USDT
-				</p>
-				<p>
-					Amount
-					<br />
-					(BTC)
-				</p>
-				<p className="text-right">Total</p>
-			</div>
+			<TabPanelHeader
+				items={[
+					{ name: 'Order Book', isActive: true },
+					{ name: 'Recent Trades' },
+				]}
+			/>
+			<OrderBookTopBar
+				activeFilter={activeFilter}
+				onClick={setActiveFilter}
+			/>
+			<OrderBookHeader />
 			<div>
-				{asks.map((ask, index) => (
-					<div key={index} className="orderbook__item">
-						<div
-							style={{
-								maxWidth: determineWidth(ask.price, ask.amount),
-								backgroundColor: determineColor(false),
-							}}
-							className="orderbook__item-visiualizer"
-						/>
-						<p className="text-left text-danger">
-							{Number(ask.price).toFixed(2)}
-						</p>
-						<p>{Number(ask.amount).toFixed(4)}</p>
-						<p className="text-right">
-							{Number(ask.total).toFixed(1)}
-						</p>
-					</div>
+				{asks.map((ask, idx) => (
+					<OrderBookRow key={idx} {...ask} isBid={false} />
 				))}
 			</div>
-			<div
-				className={`orderbook__item__active ${
-					topBid >= topAsk ? 'text-green' : 'text-danger'
-				}`}
-			>
-				<p>{topBid.toFixed(2)}</p>
-				{topBid >= topAsk ? (
-					<BsArrowUpShort size={20} />
-				) : (
-					<BsArrowDownShort size={20} />
-				)}
-				<p className="text-white">{topAsk.toFixed()}</p>
-			</div>
+			<OrderBookPriceRange topAsk={topAsk} topBid={topBid} />
 			<div>
-				{bids.map((bid, index) => (
-					<div key={index} className="orderbook__item">
-						<div
-							style={{
-								maxWidth: determineWidth(bid.price, bid.amount),
-								backgroundColor: determineColor(true),
-							}}
-							className="orderbook__item-visiualizer"
-						/>
-						<p className="text-green">
-							{Number(bid.price).toFixed(2)}
-						</p>
-						<p>{Number(bid.amount).toFixed(4)}</p>
-						<p className="text-right">
-							{Number(bid.total).toFixed(1)}
-						</p>
-					</div>
+				{bids.map((bid, idx) => (
+					<OrderBookRow key={idx} {...bid} isBid />
 				))}
 			</div>
 		</div>
