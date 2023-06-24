@@ -27,7 +27,7 @@ const BuySellTabElement = () => {
 						key={ele}
 						value={ele}
 					>
-						<LimitForm /> {ele}
+						<LimitForm />
 					</Tabs.Content>
 				))}
 			</Tabs.Root>
