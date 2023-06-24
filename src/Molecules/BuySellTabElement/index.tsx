@@ -1,3 +1,4 @@
+import LimitForm from '@/Atoms/BuySellAtoms/LimitForm';
 import * as Tabs from '@radix-ui/react-tabs';
 import { useState } from 'react';
 
@@ -26,7 +27,7 @@ const BuySellTabElement = () => {
 						key={ele}
 						value={ele}
 					>
-						Hello world {ele}
+						<LimitForm /> {ele}
 					</Tabs.Content>
 				))}
 			</Tabs.Root>

@@ -1,0 +1,13 @@
+.rvd_input {
+	outline: transparent;
+	border: none;
+	background-color: transparent;
+	width: 100%;
+	text-align: right;
+	font-weight: 500;
+}
+
+.rvd_input::placeholder {
+	color: #fff;
+	font-weight: 500;
+}

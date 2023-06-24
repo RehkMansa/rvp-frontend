@@ -1,0 +1,22 @@
+.label_wrapper {
+	border-radius: 8px;
+	border: 1px solid #373b3f;
+	display: flex;
+	align-items: center;
+	font-size: 12px;
+	gap: 8px;
+	padding: 8px 16px;
+	color: #a7b1bc;
+}
+
+.label_wrapper__hint {
+	max-width: fit-content;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	gap: 4px;
+}
+
+.label_wrapper__label__icon {
+	margin-top: 2px;
+}
