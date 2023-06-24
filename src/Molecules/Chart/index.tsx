@@ -104,14 +104,6 @@ const Chart = () => {
 					'wss://stream.binance.com:9443/ws/btcusdt@kline_1m'
 				);
 
-				/* const bb = new WebSocket(
-					'wss://stream.binance.com:9443/ws/btcusdt@depth'
-				);
-
-				bb.onmessage = (e) => {
-					console.log(JSON.parse(e.data));
-				}; */
-
 				bnSocket.onmessage = function (event) {
 					const res = JSON.parse(event.data);
 					const time = (res.k.t / 1000) as Time;

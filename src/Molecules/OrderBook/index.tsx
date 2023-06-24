@@ -46,7 +46,23 @@ const OrderBook: React.FC = () => {
 				setLoading(false);
 			}
 		};
+
 		fetchOrderBook();
+
+		const stream = new WebSocket(
+			'wss://stream.binance.com:9443/ws/btcusdt@depth'
+		);
+
+		stream.onmessage = (event) => {
+			const data = JSON.parse(event.data);
+
+			/* setOrderBook({
+				asks: formatOrders(data.a.slice(0, 5)),
+				bids: formatOrders(data.b.slice(0, 5)),
+			}); */
+		};
+
+		// stream.o
 	}, []);
 
 	if (loading) return <div className="orderbook" />;
@@ -54,10 +70,8 @@ const OrderBook: React.FC = () => {
 	const determineWidth = (amount: number, volume: number): number => {
 		const tt = (Number(amount) * Number(volume)) / 250;
 
-		console.log(tt);
-
 		return tt >= 200
-			? determineWidth(tt, volume)
+			? tt / 3
 			: tt < 50
 			? tt * 10 >= 250
 				? tt * 5
@@ -105,7 +119,7 @@ const OrderBook: React.FC = () => {
 						</p>
 						<p>{Number(ask.amount).toFixed(4)}</p>
 						<p className="text-right">
-							{Number(ask.total).toFixed(2)}
+							{Number(ask.total).toFixed(1)}
 						</p>
 					</div>
 				))}
@@ -138,7 +152,7 @@ const OrderBook: React.FC = () => {
 						</p>
 						<p>{Number(bid.amount).toFixed(4)}</p>
 						<p className="text-right">
-							{Number(bid.total).toFixed(2)}
+							{Number(bid.total).toFixed(1)}
 						</p>
 					</div>
 				))}
