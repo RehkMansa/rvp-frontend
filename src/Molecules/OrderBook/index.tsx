@@ -55,10 +55,10 @@ const OrderBook: React.FC = () => {
 
 		fetchOrderBook();
 
-		/* 	const stream = new WebSocket(
+		const stream = new WebSocket(
 			'wss://stream.binance.com:9443/ws/btcusdt@depth'
-		); 
-		
+		);
+
 		stream.onmessage = (event) => {
 			const data = JSON.parse(event.data);
 
@@ -66,7 +66,7 @@ const OrderBook: React.FC = () => {
 				asks: formatOrders(data.a.slice(0, 5)),
 				bids: formatOrders(data.b.slice(0, 5)),
 			});
-		}; */
+		};
 	}, []);
 
 	if (loading) return <div className="orderbook" />;
