@@ -1,6 +1,7 @@
 import LimitForm from '@/Molecules/LimitForm';
 import { useState } from 'react';
 import * as Tabs from '@radix-ui/react-tabs';
+import BuySellMainFooter from '@/Molecules/BuySellMainFooter';
 
 const tabs = ['Limit', 'Market', 'Stop-Limit'];
 
@@ -30,6 +31,7 @@ const BuySellTabElement = () => {
 						<LimitForm />
 					</Tabs.Content>
 				))}
+				<BuySellMainFooter />
 			</Tabs.Root>
 		</div>
 	);

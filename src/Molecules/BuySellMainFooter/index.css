@@ -1,0 +1,28 @@
+.bsmf {
+	font-size: 12px;
+	color: #a7b1bc;
+	padding: 0;
+	border-top: 1px solid rgba(57, 64, 71, 0.5);
+	margin-top: 16px;
+}
+
+.bsmf__row {
+	margin-top: 4px;
+}
+
+.bsmf__row div {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.bsmf__row .text-white {
+	font-size: 14px;
+	font-weight: 700;
+	margin-top: 2px;
+}
+
+.bsmf button {
+	padding: 3px 10px;
+	margin-top: 10px;
+}
