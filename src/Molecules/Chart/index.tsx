@@ -16,6 +16,8 @@ const chartOptions = {
 			color: '#20252b',
 		},
 		textColor: '#A7B1BC',
+		fontFamily: 'Satoshi, Ubuntu, Arial, sans-serif',
+		fontWeight: 500,
 	},
 	grid: {
 		vertLines: {

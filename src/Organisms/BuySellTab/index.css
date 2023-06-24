@@ -1,0 +1,38 @@
+.buysell {
+	width: 100%;
+	width: 250px;
+	border: 1px solid #20252b;
+	padding: 12px 8px;
+	margin: 8px;
+	margin-left: 0;
+	border-radius: 8px;
+	background-color: #20252b;
+}
+
+.border-success {
+	border: 1px solid #25c26e;
+}
+
+.buysell__tab {
+	margin-top: 16px;
+}
+
+.buysell__tab__list {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 8px;
+	color: #a7b1bc;
+}
+
+.buysell__tab__list--trigger {
+	font-size: 12px;
+	line-height: 16px;
+	border-radius: 100px;
+	padding: 4px 6px;
+}
+
+.buysell__tab__list--trigger[data-state='active'] {
+	background-color: #353945;
+	font-weight: 700;
+	color: #fff;
+}
