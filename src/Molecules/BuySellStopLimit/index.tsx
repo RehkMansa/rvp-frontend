@@ -2,10 +2,12 @@ import PriceOnlyInput from '@/Atoms/PriceOnlyInput';
 import LimitFormTypeDropDown from '@/Atoms/BuySellAtoms/TypeDropDown';
 import CheckBoxWithHint from '@/Atoms/BuySellAtoms/CheckBoxWithHint';
 import BuySellFormFooter from '@/Atoms/BuySellAtoms/BuySellFormFooter';
+import './index.css';
 
 const options = [
 	{
 		label: 'Trigger Price',
+		className: 'buy--trigger',
 	},
 	{
 		label: 'Limit price',
@@ -18,8 +20,12 @@ const options = [
 const BuySellStopLimit = () => {
 	return (
 		<div className="limit-form">
-			{options.map(({ label }) => (
-				<PriceOnlyInput key={label} label={label} />
+			{options.map(({ label, className }) => (
+				<PriceOnlyInput
+					key={label}
+					wrapperClass={className}
+					label={label}
+				/>
 			))}
 
 			<LimitFormTypeDropDown />

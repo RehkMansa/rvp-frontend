@@ -6,13 +6,14 @@ type Props = {
 	label: string;
 	currency?: string;
 	placeholder?: string;
+	wrapperClass?: string;
 } & ComponentProps<'input'>;
 
 const PriceOnlyInput = (props: Props) => {
-	const { label, placeholder, currency } = props;
+	const { label, placeholder, currency, wrapperClass } = props;
 
 	return (
-		<InputLabelWrapper label={label}>
+		<InputLabelWrapper className={wrapperClass} label={label}>
 			<input
 				type="number"
 				step={0.01}
