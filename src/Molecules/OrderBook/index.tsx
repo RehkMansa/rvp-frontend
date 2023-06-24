@@ -53,16 +53,14 @@ const OrderBook: React.FC = () => {
 			'wss://stream.binance.com:9443/ws/btcusdt@depth'
 		);
 
-		stream.onmessage = (event) => {
+		/* stream.onmessage = (event) => {
 			const data = JSON.parse(event.data);
 
-			/* setOrderBook({
+			setOrderBook({
 				asks: formatOrders(data.a.slice(0, 5)),
 				bids: formatOrders(data.b.slice(0, 5)),
-			}); */
-		};
-
-		// stream.o
+			});
+		}; */
 	}, []);
 
 	if (loading) return <div className="orderbook" />;
@@ -91,6 +89,10 @@ const OrderBook: React.FC = () => {
 
 	return (
 		<div className="orderbook">
+			<div className="orderbook__switch text-gray">
+				<div className="orderbook__switch--active">Order Book</div>
+				<div>Recent trades</div>
+			</div>
 			<div className="orderbook__header">
 				<p>
 					Price

@@ -91,6 +91,10 @@ button {
 	color: #fff;
 }
 
+.text-gray {
+	color: #a7b1bc;
+}
+
 .chart_container canvas {
 	font-size: 10px;
 }
