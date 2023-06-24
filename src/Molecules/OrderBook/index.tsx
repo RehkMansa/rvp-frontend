@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import './index.css';
 import { BsArrowDownShort, BsArrowUpShort } from 'react-icons/bs';
+import Icon1 from '@/assets/hamburger-stacked.svg';
+import Icon2 from '@/assets/hamburger--2.svg';
+import Icon3 from '@/assets/hamburger--3.svg';
+import * as DropDown from '@radix-ui/react-dropdown-menu';
+import { FaChevronDown } from 'react-icons/fa';
 
 interface Order {
 	price: number;
@@ -18,6 +23,8 @@ const OrderBook: React.FC = () => {
 	});
 
 	const [loading, setLoading] = useState(true);
+
+	const [activeFilter, setActiveFilter] = useState(10);
 
 	const formatOrders = (orders: number[][]): Order[] => {
 		return orders.map(([price, amount]) => {
@@ -92,6 +99,38 @@ const OrderBook: React.FC = () => {
 			<div className="orderbook__switch text-gray">
 				<div className="orderbook__switch--active">Order Book</div>
 				<div>Recent trades</div>
+			</div>
+			<div className="orderbook__icons">
+				<img className="orderbook__icons--active" src={Icon1} alt="" />
+				<img src={Icon2} alt="" />
+				<img src={Icon3} alt="" />
+				<div className="orderbook__dropdown">
+					<DropDown.Root>
+						<DropDown.Trigger asChild>
+							<div className="orderbook__dropdown__trigger">
+								{activeFilter}
+								<FaChevronDown
+									size={12}
+									style={{ marginTop: 3 }}
+								/>
+							</div>
+						</DropDown.Trigger>
+
+						<DropDown.Portal>
+							<DropDown.Content className="orderbook__dropdown__content">
+								{[5, 10, 20, 30].map((n) => (
+									<DropDown.Item
+										onClick={() => setActiveFilter(n)}
+										key={n}
+										className="orderbook__dropdown__item"
+									>
+										<span>{n}</span>
+									</DropDown.Item>
+								))}
+							</DropDown.Content>
+						</DropDown.Portal>
+					</DropDown.Root>
+				</div>
 			</div>
 			<div className="orderbook__header">
 				<p>

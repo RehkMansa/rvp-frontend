@@ -69,3 +69,44 @@
 	box-shadow: 0px 3px 1px 0px rgba(0, 0, 0, 0.04),
 		0px 3px 8px 0px rgba(0, 0, 0, 0.12);
 }
+
+.orderbook__icons {
+	display: flex;
+	margin-bottom: 8px;
+}
+.orderbook__icons img {
+	padding: 11px;
+}
+.orderbook__icons--active {
+	background-color: #353945;
+	border-radius: 4px;
+}
+
+.orderbook__dropdown {
+	width: fit-content;
+	margin-left: auto;
+	font-size: 12px;
+}
+
+.orderbook__dropdown__trigger {
+	background-color: #353945;
+	border-radius: 4px;
+	display: flex;
+	align-items: center;
+	padding: 4px 8px;
+	gap: 10px;
+}
+
+.orderbook__dropdown__content {
+	background-color: #353945;
+	width: 50px;
+	font-size: 12px;
+	padding: 0px 8px;
+	margin-top: 4px;
+}
+
+.orderbook__dropdown__item {
+	margin-bottom: 5px;
+	outline: none;
+	cursor: pointer;
+}
