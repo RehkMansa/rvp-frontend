@@ -9,3 +9,13 @@
 	line-height: 32px;
 	font-weight: 500;
 }
+
+@media (max-width: 756px) {
+	.topinfo__token-details h5 {
+		font-size: 18px;
+	}
+
+	.topinfo__token-details img {
+		height: 24px;
+	}
+}

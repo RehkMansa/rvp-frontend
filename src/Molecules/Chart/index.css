@@ -30,6 +30,10 @@
 	color: #fff;
 }
 
+.chart_wrapper__time--interval img {
+	min-width: 20px;
+}
+
 .border-sides {
 	border-left: 1px solid rgba(234, 240, 254, 0.1);
 	border-right: 1px solid rgba(234, 240, 254, 0.1);
@@ -51,4 +55,5 @@
 	align-items: center;
 	color: #393d41;
 	gap: 8px;
+	min-width: 50px;
 }

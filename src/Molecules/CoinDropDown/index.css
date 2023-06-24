@@ -1,3 +1,8 @@
+.topinfo__coin_dropdown {
+	width: 100%;
+	max-width: 280px;
+}
+
 .topinfo__token {
 	display: flex;
 	gap: 10px;
@@ -14,6 +19,8 @@
 	border: 1px solid var(--bg-darkMode-card);
 	height: 458px;
 	overflow-y: scroll;
+	background-color: #1c2127;
+	padding-top: 10px;
 }
 
 .topinfo__coin_dropdown__modal__filter {
@@ -45,4 +52,11 @@
 
 .topinfo__coin_dropdown__trigger span {
 	font-size: 18px;
+}
+
+.tcdm-header {
+	margin-bottom: 10px;
+	font-size: 14px;
+	font-weight: 700;
+	line-height: 16px;
 }

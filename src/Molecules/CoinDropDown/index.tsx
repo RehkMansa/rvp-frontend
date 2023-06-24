@@ -25,6 +25,7 @@ const CoinDropDown = () => (
 					sideOffset={20}
 					className="topinfo__coin_dropdown__modal"
 				>
+					<div className="tcdm-header">Select Market</div>
 					<SearchBar />
 
 					<div className="topinfo__coin_dropdown__modal__filter">
