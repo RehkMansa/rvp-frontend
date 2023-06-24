@@ -30,7 +30,7 @@ const BuySellMainFooter = (props: Props) => {
 					<p className="text-white">{openOrders ?? '0.00'}</p>
 				</div>
 			</div>
-			<Button>Submit</Button>
+			<Button className="submit-button">Submit</Button>
 		</div>
 	);
 };

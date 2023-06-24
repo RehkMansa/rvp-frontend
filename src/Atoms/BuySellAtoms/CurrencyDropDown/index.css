@@ -1,0 +1,19 @@
+.currency-dropdown__list {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	color: #a7b1bc;
+	font-size: 14px;
+	position: relative;
+}
+
+.currency-dropdown__list span {
+	font-size: 12px;
+}
+
+.currency-dropdown__icon {
+	color: #25c26e;
+	position: absolute;
+	bottom: 5px;
+	left: 20px;
+}

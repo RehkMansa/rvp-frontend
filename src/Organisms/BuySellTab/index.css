@@ -28,6 +28,7 @@
 	line-height: 16px;
 	border-radius: 100px;
 	padding: 4px 6px;
+	cursor: pointer;
 }
 
 .buysell__tab__list--trigger[data-state='active'] {

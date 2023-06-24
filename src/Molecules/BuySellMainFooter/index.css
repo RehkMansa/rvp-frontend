@@ -7,7 +7,7 @@
 }
 
 .bsmf__row {
-	margin-top: 4px;
+	margin-top: 8px;
 }
 
 .bsmf__row div {
@@ -22,7 +22,7 @@
 	margin-top: 2px;
 }
 
-.bsmf button {
+.bsmf .submit-button {
 	padding: 3px 10px;
 	margin-top: 10px;
 }

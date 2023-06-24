@@ -7,12 +7,16 @@ type Props = {
 } & ComponentProps<'button'>;
 
 const Button = (props: Props) => {
-	const { variant } = props;
+	const { variant, className } = props;
 
 	return (
 		<button
 			{...props}
-			className={clsx(variant === 'gradient' && variant, 'button')}
+			className={clsx(
+				variant === 'gradient' && variant,
+				'button',
+				className
+			)}
 			type="button"
 		/>
 	);
