@@ -4,8 +4,7 @@
 	padding: 0 16px;
 	border: 1px solid #262932;
 	border-radius: 8px;
-	margin: 8px;
-	max-width: calc(100% - 270px);
+	max-width: calc(100% - 258px);
 }
 
 .chart_wrapper__time {

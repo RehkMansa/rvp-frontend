@@ -1,12 +1,12 @@
 .topinfo {
 	padding: 16px;
 	background-color: #20252b;
-	margin: 8px;
 	border: 1px solid var(--bg-darkMode-card);
 	border-radius: 8px;
 	display: flex;
 	align-items: center;
 	gap: 32px;
+	margin: 8px;
 }
 
 .topinfo__content {
