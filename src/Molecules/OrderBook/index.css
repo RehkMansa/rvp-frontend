@@ -1,0 +1,48 @@
+.orderbook {
+	border: 1px solid #20252b;
+	padding: 12px 8px;
+	margin: 8px;
+	border-radius: 8px;
+	background-color: #20252b;
+	position: relative;
+	max-width: 250px;
+	width: 100%;
+}
+
+.orderbook__header {
+	color: #a7b1bc;
+}
+
+.orderbook__header,
+.orderbook__item {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 20px;
+	font-size: 12px;
+	isolation: isolate;
+	position: relative;
+	padding: 3.5px 8px;
+	margin-bottom: 6px;
+}
+
+.orderbook__item:last-of-type {
+	margin-bottom: 0;
+}
+
+.orderbook__item-visiualizer {
+	position: absolute;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: -1;
+	width: 100%;
+	opacity: 0.15000000596046448;
+}
+
+.orderbook__item__active {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	margin-block: 12px 14px;
+}

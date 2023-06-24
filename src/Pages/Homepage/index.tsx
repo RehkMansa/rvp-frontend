@@ -1,13 +1,13 @@
 import { Fragment } from 'react';
 import NavBar from '../../Organisms/Navbar';
 import TopInfo from '@/Organisms/TopInfo';
-import Chart from '@/Molecules/Chart';
+import ChartAndOrderBook from '@/Organisms/ChartAndOrderBook';
 
 const HomePage = () => (
 	<Fragment>
 		<NavBar />
 		<TopInfo />
-		<Chart />
+		<ChartAndOrderBook />
 	</Fragment>
 );
 

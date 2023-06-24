@@ -83,6 +83,24 @@ button {
 	color: #00c076;
 }
 
+.text-danger {
+	color: #ff6838;
+}
+
+.text-white {
+	color: #fff;
+}
+
 .chart_container canvas {
 	font-size: 10px;
+}
+
+.text-left {
+	text-align: left;
+}
+.text-right {
+	text-align: right;
+}
+.text-center {
+	text-align: center;
 }
