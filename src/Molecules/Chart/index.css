@@ -1,4 +1,53 @@
 .chart_wrapper {
 	max-width: 870px;
 	width: 100%;
+	background-color: #20252b;
+	padding: 0 16px;
+	border: 1px solid #262932;
+	border-radius: 8px;
+	margin: 8px;
+}
+
+.chart_wrapper__time {
+	display: flex;
+	color: #a7b1bc;
+	padding: 16px 0;
+	font-size: 14px;
+	align-items: center;
+	gap: 8px;
+	line-height: 16px;
+}
+
+.chart_wrapper__time--interval {
+	padding: 6px 12px;
+	cursor: pointer;
+	text-transform: uppercase;
+}
+
+.chart_wrapper__time--interval-active {
+	background-color: #555c63;
+	border-radius: 20px;
+	color: #fff;
+}
+
+.border-sides {
+	border-left: 1px solid rgba(234, 240, 254, 0.1);
+	border-right: 1px solid rgba(234, 240, 254, 0.1);
+}
+
+.chart_wrapper--fx {
+	padding-inline: 10px;
+	border-right: 1px solid rgba(234, 240, 254, 0.1);
+	height: 32px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.chart_wrapper__arrows {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #393d41;
+	gap: 8px;
 }

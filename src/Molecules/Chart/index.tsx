@@ -1,7 +1,10 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { CrosshairMode, Time, createChart } from 'lightweight-charts';
 import useSingleEffect from '@/hooks/useSingleEffect';
+import { LuChevronDown } from 'react-icons/lu';
+import { GrRedo, GrUndo } from 'react-icons/gr';
 import './index.css';
+import CandleSvg from '@/assets/CandleChart1.svg';
 
 const chartOptions = {
 	height: 300,
@@ -12,7 +15,7 @@ const chartOptions = {
 	autoSize: true,
 	layout: {
 		background: {
-			color: '#1c2127',
+			color: '#20252b',
 		},
 		textColor: '#A7B1BC',
 	},
@@ -29,13 +32,16 @@ const chartOptions = {
 	},
 };
 
+const intervals = ['1h', '2h', '4h', '1d', '1w', '1m'];
+
 const API_URL =
 	'https://api.binance.com/api/v3/klines?symbol=BTCUSDT&interval=1m&limit=1000';
 
 const Chart = () => {
 	const priceChart = useRef<HTMLDivElement>(null);
 	const volumeChart = useRef<HTMLDivElement>(null);
-	// FF6838 00C076
+
+	const [activeTime, setActiveTime] = useState(4);
 
 	useSingleEffect(() => {
 		const setCanvas = () => {
@@ -72,6 +78,8 @@ const Chart = () => {
 
 						/** update candle series with initial history */
 						candleSeries.setData(cdata);
+
+						//
 
 						const volumes = data.map((d) => {
 							const value = parseFloat(d[5]);
@@ -113,8 +121,38 @@ const Chart = () => {
 		setCanvas();
 	}, []);
 
+	console.log('....');
+
 	return (
 		<div className="chart_wrapper">
+			<div className="chart_wrapper__time">
+				<span>Time</span>
+				{intervals.map((time, idx) => (
+					<button
+						className={`chart_wrapper__time--interval ${
+							idx === activeTime
+								? 'chart_wrapper__time--interval-active'
+								: ''
+						}`}
+						type="submit"
+						onClick={() => setActiveTime(idx)}
+						key={time}
+					>
+						{time}
+					</button>
+				))}
+				<div style={{ marginTop: 3 }}>
+					<LuChevronDown />
+				</div>
+				<div className="chart_wrapper__time--interval border-sides">
+					<img src={CandleSvg} alt="" />
+				</div>
+				<div className="chart_wrapper--fx">Fx Indicators</div>
+				<div className="chart_wrapper__arrows">
+					<GrUndo size={19} />
+					<GrRedo size={19} />
+				</div>
+			</div>
 			<div
 				ref={priceChart}
 				className="chart_container chart_container-chart1"
