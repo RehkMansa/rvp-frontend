@@ -1,6 +1,6 @@
 import TabPanelHeader from '@/Atoms/TabPanelHeader';
 import './index.css';
-import BuySellTabElement from '@/Molecules/BuySellTabElement';
+import BuySellTabElement from '../BuySellTabElement';
 
 const BuySellTab = () => {
 	return (

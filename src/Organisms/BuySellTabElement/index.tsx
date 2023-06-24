@@ -1,6 +1,6 @@
-import LimitForm from '@/Atoms/BuySellAtoms/LimitForm';
-import * as Tabs from '@radix-ui/react-tabs';
+import LimitForm from '@/Molecules/LimitForm';
 import { useState } from 'react';
+import * as Tabs from '@radix-ui/react-tabs';
 
 const tabs = ['Limit', 'Market', 'Stop-Limit'];
 

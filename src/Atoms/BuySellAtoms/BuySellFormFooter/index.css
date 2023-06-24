@@ -1,0 +1,15 @@
+.buy_sell_form_footer > * + * {
+	margin-top: 16px;
+}
+
+.buy_sell_form_footer button {
+	width: 100%;
+}
+
+.buy_sell_form_footer_row {
+	display: flex;
+	color: #a7b1bc;
+	align-items: center;
+	justify-content: space-between;
+	font-size: 12px;
+}

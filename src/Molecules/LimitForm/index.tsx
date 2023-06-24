@@ -1,6 +1,8 @@
 import PriceOnlyInput from '@/Atoms/PriceOnlyInput';
 import './index.css';
-import LimitFormTypeDropDown from '../TypeDropDown';
+import LimitFormTypeDropDown from '@/Atoms/BuySellAtoms/TypeDropDown';
+import CheckBoxWithHint from '@/Atoms/BuySellAtoms/CheckBoxWithHint';
+import BuySellFormFooter from '@/Atoms/BuySellAtoms/BuySellFormFooter';
 
 const options = [
 	{
@@ -19,6 +21,8 @@ const LimitForm = () => {
 			))}
 
 			<LimitFormTypeDropDown />
+			<CheckBoxWithHint label="Post Only" />
+			<BuySellFormFooter />
 		</div>
 	);
 };

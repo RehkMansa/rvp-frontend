@@ -1,0 +1,17 @@
+.checkbox__withHint {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	color: #a7b1bc;
+	font-size: 12px;
+}
+
+.checkbox__withHint__label {
+	display: flex;
+	gap: 4px;
+	align-items: center;
+}
+
+.checkbox__withHint__label input {
+	outline: transparent;
+}
