@@ -1,0 +1,12 @@
+.limit-form {
+	margin-top: 16px;
+	display: grid;
+	gap: 16px;
+}
+
+.limit-form_type__trigger {
+	margin-left: auto;
+	display: flex;
+	align-items: center;
+	gap: 4px;
+}

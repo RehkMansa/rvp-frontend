@@ -4,7 +4,7 @@ import InputLabelWrapper from '../InputLabelWrapper';
 
 type Props = {
 	label: string;
-	currency: string;
+	currency?: string;
 	placeholder?: string;
 } & ComponentProps<'input'>;
 
@@ -20,7 +20,7 @@ const PriceOnlyInput = (props: Props) => {
 				placeholder={placeholder ?? '0.00'}
 				className="rvd_input"
 			/>
-			<span>{currency}</span>
+			<span>{currency ?? 'USD'}</span>
 		</InputLabelWrapper>
 	);
 };
