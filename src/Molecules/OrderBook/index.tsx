@@ -49,11 +49,11 @@ const OrderBook: React.FC = () => {
 
 		fetchOrderBook();
 
-		const stream = new WebSocket(
+		/* 	const stream = new WebSocket(
 			'wss://stream.binance.com:9443/ws/btcusdt@depth'
-		);
-
-		/* stream.onmessage = (event) => {
+		); 
+		
+		stream.onmessage = (event) => {
 			const data = JSON.parse(event.data);
 
 			setOrderBook({
