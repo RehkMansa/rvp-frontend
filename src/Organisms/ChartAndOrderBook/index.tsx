@@ -96,7 +96,9 @@ const ChartAndOrderBook = () => {
 								orderBook={orderBook}
 							/>
 						</div>
-						<div className={applyShowClass('Recent trades')}></div>
+						<div className={applyShowClass('Recent trades')}>
+							<div className="emptyTrade">Nothing to show</div>
+						</div>
 					</div>
 				</div>
 			</div>

@@ -7,9 +7,12 @@ import './index.css';
 const HomePage = () => (
 	<Fragment>
 		<TopInfo />
-		<div className="chart__wrapper">
-			<ChartAndOrderBook />
-			<BuySellTab className="chart__wrapper__buysell" />
+		<div className="chart-container">
+			<div className="chat-container--wrapped">
+				<ChartAndOrderBook />
+				<p>hello world</p>
+			</div>
+			<BuySellTab className="chart-container__buysell" />
 		</div>
 	</Fragment>
 );

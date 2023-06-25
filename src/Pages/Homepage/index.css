@@ -1,4 +1,4 @@
-.chart__wrapper {
+.chart-container {
 	display: flex;
 	gap: 8px;
 	justify-content: space-between;
@@ -6,12 +6,23 @@
 	align-items: flex-start;
 }
 
+.chat-container--wrapped {
+	width: 100%;
+	max-width: calc(100% - 258px);
+}
+
 @media (max-width: 576px) {
-	.chart__wrapper {
+	.chart-container {
 		display: block;
 	}
 
-	.chart__wrapper__buysell {
+	.chart-container__buysell {
 		display: none;
+	}
+}
+
+@media (max-width: 576px) {
+	.chat-container--wrapped {
+		max-width: 100%;
 	}
 }
