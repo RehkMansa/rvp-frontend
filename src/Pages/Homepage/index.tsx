@@ -4,6 +4,7 @@ import ChartAndOrderBook from '@/Organisms/ChartAndOrderBook';
 import BuySellTab from '@/Organisms/BuySellTab';
 import OptionWrapper from '@/Organisms/OptionWrapper';
 import './index.css';
+import BuySellPopUp from '@/Organisms/BuySellPopUp';
 
 const HomePage = () => (
 	<Fragment>
@@ -15,6 +16,7 @@ const HomePage = () => (
 			</div>
 			<BuySellTab className="chart-container__buysell" />
 		</div>
+		<BuySellPopUp />
 	</Fragment>
 );
 

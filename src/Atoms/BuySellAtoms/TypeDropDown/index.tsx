@@ -12,7 +12,7 @@ const dropdownFields = [
 const LimitFormTypeDropDown = () => {
 	return (
 		<Select.Root defaultValue={dropdownFields[1]}>
-			<Select.Trigger>
+			<Select.Trigger asChild>
 				<InputLabelWrapper label="Type">
 					<div className="limit-form_type__trigger">
 						<Select.Value placeholder="Select Range" />

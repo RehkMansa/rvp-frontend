@@ -18,7 +18,7 @@ const ChartTopBar = memo(() => {
 							? 'chart_wrapper__time--interval-active'
 							: ''
 					}`}
-					type="submit"
+					type="button"
 					onClick={() => setActiveTime(idx)}
 					key={time}
 				>

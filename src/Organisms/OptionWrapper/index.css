@@ -11,6 +11,7 @@
 .options-wrapper--tab {
 	grid-template-columns: repeat(4, minmax(150px, 1fr));
 	font-size: 14px;
+	max-width: 640px;
 	overflow-x: auto;
 }
 

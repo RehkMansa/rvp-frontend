@@ -1,0 +1,14 @@
+.vanilla-btn {
+	padding: 8px 16px;
+	border-radius: 8px;
+	font-size: 16px;
+	font-weight: 700;
+}
+
+.btn-green {
+	background: #25c26e;
+}
+
+.btn-red {
+	background: #ff554a;
+}

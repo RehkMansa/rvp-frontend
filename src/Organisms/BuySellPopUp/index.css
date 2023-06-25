@@ -1,0 +1,44 @@
+.bs-popup-trigger {
+	padding: 16px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	position: relative;
+	gap: 16px;
+	text-align: center;
+}
+
+@media (min-width: 577px) {
+	.bs-wrapper {
+		display: none;
+	}
+}
+
+.bs-popup-overlay {
+	background-color: rgba(0, 0, 0, 0.5);
+	position: fixed;
+	inset: 0;
+	animation: overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bs-popup-content {
+	position: fixed;
+	z-index: 1;
+	width: 100vw;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	height: 550px;
+	padding: 30px 16px;
+	background-color: #20252b;
+	border-radius: 20px 20px 0 0;
+	overflow-y: scroll;
+}
+
+@keyframes overlayShow {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
