@@ -14,6 +14,7 @@
 @media (max-width: 576px) {
 	.chart-container {
 		display: block;
+		margin-inline: 0;
 	}
 
 	.chart-container__buysell {
@@ -24,5 +25,9 @@
 @media (max-width: 576px) {
 	.chat-container--wrapped {
 		max-width: 100%;
+	}
+
+	.chart-container {
+		margin-block: 2px 0;
 	}
 }

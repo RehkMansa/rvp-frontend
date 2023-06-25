@@ -73,3 +73,10 @@
 		min-width: 130px;
 	}
 }
+
+@media (max-width: 576px) {
+	.topinfo {
+		margin: 0;
+		border-radius: 0;
+	}
+}

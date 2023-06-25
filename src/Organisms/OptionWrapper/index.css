@@ -9,17 +9,17 @@
 }
 
 .options-wrapper--tab {
-	width: 640px;
-	grid-template-columns: repeat(4, minmax(0, 1fr));
+	grid-template-columns: repeat(4, minmax(150px, 1fr));
 	font-size: 14px;
+	overflow-x: auto;
+}
+
+.options-wrapper--tab > * {
+	min-width: 155px;
 }
 
 .options-wrapper--tab .tab_panel--active {
 	padding-block: 10px;
-}
-
-.options-wrapper--container {
-	overflow-x: auto;
 }
 
 .options-wrapper--content {
@@ -42,6 +42,8 @@
 @media (max-width: 576px) {
 	.options-wrapper {
 		height: 350px;
+		border-radius: 0px;
+		margin-top: 0px;
 	}
 	.options-wrapper--content {
 		font-size: 15px;

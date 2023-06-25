@@ -88,6 +88,7 @@
 
 	.chart_wrapper {
 		height: 535px;
+		border-radius: 0;
 	}
 
 	.chart_container-chart1 {
@@ -144,5 +145,9 @@
 @media (max-width: 576px) {
 	.chart-order {
 		max-width: 100%;
+	}
+
+	.chart--wrapper--sm {
+		border-radius: 0;
 	}
 }
