@@ -21,7 +21,7 @@ const BuySellPopUp = () => {
 		duration: 0.3,
 	};
 	return (
-		<div className="bs-wrapper">
+		<div className="bs-container">
 			<Dialog.Root onOpenChange={(val) => setOpen(val)} open={open}>
 				<Dialog.Trigger asChild>
 					<div className="bs-popup-trigger">

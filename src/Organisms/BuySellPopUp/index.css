@@ -1,3 +1,7 @@
+.bs-container {
+	padding-block: 40px;
+}
+
 .bs-popup-trigger {
 	padding: 16px;
 	display: grid;
@@ -9,6 +13,10 @@
 
 @media (min-width: 577px) {
 	.bs-wrapper {
+		display: none;
+	}
+
+	.bs-container {
 		display: none;
 	}
 }
