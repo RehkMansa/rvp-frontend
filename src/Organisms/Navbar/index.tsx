@@ -1,20 +1,7 @@
 import NavBarRight from '@/Molecules/NavBarRight';
 import './index.css';
-
-const links = [
-	{
-		name: 'exchange',
-		url: '/',
-	},
-	{
-		name: 'wallets',
-		url: 'wallets',
-	},
-	{
-		name: 'roqqu hub',
-		url: 'roqqu hub',
-	},
-];
+import MobileDropDown from '@/Atoms/MobileDropDown';
+import { NAVLINKS } from '@/consts';
 
 const NavBar = () => (
 	<header className="header">
@@ -24,7 +11,7 @@ const NavBar = () => (
 
 		<nav>
 			<ul className="header__nav">
-				{links.map(({ name, url }) => (
+				{NAVLINKS.map(({ name, url }) => (
 					<li
 						key={name}
 						className={url === '/' ? 'active' : undefined}
@@ -35,6 +22,7 @@ const NavBar = () => (
 			</ul>
 		</nav>
 		<NavBarRight />
+		<MobileDropDown />
 	</header>
 );
 

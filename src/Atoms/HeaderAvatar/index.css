@@ -12,3 +12,14 @@
 	font-size: 14px;
 	font-weight: 500;
 }
+
+@media (max-width: 576px) {
+	.header-avatar {
+		background-color: transparent;
+		padding: 0;
+	}
+
+	.header-avatar :where(h5, svg) {
+		display: none;
+	}
+}

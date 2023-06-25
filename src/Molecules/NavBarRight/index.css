@@ -3,4 +3,12 @@
 	display: flex;
 	align-items: center;
 	gap: 16px;
+
+	color: #a7b1bc;
+}
+
+@media (max-width: 756px) {
+	.header__right--logout {
+		display: none;
+	}
 }

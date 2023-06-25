@@ -33,3 +33,20 @@
 .header__nav .active {
 	color: var(--white);
 }
+
+@media (max-width: 756px) {
+	.header__nav {
+		display: none;
+	}
+}
+
+@media (max-width: 576px) {
+	.header__logo {
+		border-right: none;
+	}
+
+	.header {
+		background-color: #24273a;
+		padding: 20px 16px;
+	}
+}

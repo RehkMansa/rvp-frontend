@@ -6,8 +6,8 @@ import './index.css';
 const NavBarRight = () => (
 	<div className="header__right">
 		<HeaderAvatar name="Olakunle Te..." />
-		<TfiWorld size={20} />
-		<HiOutlineLogout className="flipX" size={22} />
+		<TfiWorld size={24} />
+		<HiOutlineLogout className="flipX header__right--logout" size={22} />
 	</div>
 );
 
