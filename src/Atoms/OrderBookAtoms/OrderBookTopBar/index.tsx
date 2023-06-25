@@ -3,13 +3,14 @@ import Icon2 from '@/assets/hamburger--2.svg';
 import Icon3 from '@/assets/hamburger--3.svg';
 import { FaChevronDown } from 'react-icons/fa';
 import * as DropDown from '@radix-ui/react-dropdown-menu';
+import { memo } from 'react';
 
 type Props = {
 	activeFilter: number;
 	onClick: (idx: number) => void;
 };
 
-const OrderBookTopBar = ({ activeFilter, onClick }: Props) => (
+const OrderBookTopBar = memo(({ activeFilter, onClick }: Props) => (
 	<div className="orderbook__icons">
 		<img className="orderbook__icons--active" src={Icon1} alt="" />
 		<img src={Icon2} alt="" />
@@ -39,6 +40,6 @@ const OrderBookTopBar = ({ activeFilter, onClick }: Props) => (
 			</DropDown.Root>
 		</div>
 	</div>
-);
+));
 
 export default OrderBookTopBar;

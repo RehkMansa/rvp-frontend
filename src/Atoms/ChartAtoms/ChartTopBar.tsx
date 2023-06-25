@@ -1,11 +1,11 @@
-import { useState } from 'react';
+import { memo, useState } from 'react';
 import { GrRedo, GrUndo } from 'react-icons/gr';
 import { LuChevronDown } from 'react-icons/lu';
 import CandleSvg from '@/assets/CandleChart1.svg';
 
 const intervals = ['1h', '2h', '4h', '1d', '1w', '1m'];
 
-const ChartTopBar = () => {
+const ChartTopBar = memo(() => {
 	const [activeTime, setActiveTime] = useState(4);
 
 	return (
@@ -38,6 +38,6 @@ const ChartTopBar = () => {
 			</div>
 		</div>
 	);
-};
+});
 
 export default ChartTopBar;
