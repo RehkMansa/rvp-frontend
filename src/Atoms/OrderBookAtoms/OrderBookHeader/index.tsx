@@ -1,4 +1,6 @@
-const OrderBookHeader = () => (
+import { memo } from 'react';
+
+const OrderBookHeader = memo(() => (
 	<div className="orderbook__header">
 		<p>
 			Price
@@ -12,6 +14,6 @@ const OrderBookHeader = () => (
 		</p>
 		<p className="text-right">Total</p>
 	</div>
-);
+));
 
 export default OrderBookHeader;

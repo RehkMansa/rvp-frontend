@@ -12,6 +12,11 @@ type Props = {
 	loading: boolean;
 };
 
+const items = [
+	{ name: 'Order Book', isActive: true },
+	{ name: 'Recent Trades' },
+];
+
 const OrderBook = (props: Props) => {
 	const { orderBook, loading } = props;
 
@@ -27,12 +32,7 @@ const OrderBook = (props: Props) => {
 
 	return (
 		<div className="orderbook">
-			<TabPanelHeader
-				items={[
-					{ name: 'Order Book', isActive: true },
-					{ name: 'Recent Trades' },
-				]}
-			/>
+			<TabPanelHeader items={items} />
 			<OrderBookTopBar
 				activeFilter={activeFilter}
 				onClick={setActiveFilter}
