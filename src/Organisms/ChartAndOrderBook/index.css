@@ -3,6 +3,7 @@
 	width: 100%;
 	max-width: calc(100% - 258px);
 	gap: 8px;
+	min-height: 535px;
 }
 
 .chart_wrapper {
@@ -12,6 +13,7 @@
 	border: 1px solid #262932;
 	border-radius: 8px;
 	max-width: calc(100% - 258px);
+	min-height: 100%;
 }
 
 .chart-order .chart_wrapper__time {
@@ -67,6 +69,13 @@
 
 .chart-order.show-lg {
 	display: none;
+}
+
+.chart_container-chart1 {
+	min-height: 300px;
+}
+.chart_container-chart2 {
+	min-height: 150px;
 }
 
 @media (max-width: 992px) {
