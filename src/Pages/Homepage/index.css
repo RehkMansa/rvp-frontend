@@ -5,3 +5,13 @@
 	margin: 8px;
 	align-items: flex-start;
 }
+
+@media (max-width: 576px) {
+	.chart__wrapper {
+		display: block;
+	}
+
+	.chart__wrapper__buysell {
+		display: none;
+	}
+}

@@ -126,3 +126,18 @@ input::-webkit-inner-spin-button {
 input[type='number'] {
 	-moz-appearance: textfield;
 }
+
+@media (max-width: 576px) {
+	body {
+		background-color: #24273a;
+	}
+
+	main {
+		background-color: var(--background);
+		padding-top: 8px;
+	}
+
+	.topinfo {
+		margin-top: 0;
+	}
+}

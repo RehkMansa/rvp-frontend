@@ -36,3 +36,9 @@
 	font-weight: 700;
 	color: #fff;
 }
+
+@media (max-width: 576px) {
+	.buysell {
+		max-width: 100%;
+	}
+}

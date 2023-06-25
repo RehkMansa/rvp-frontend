@@ -1,10 +1,17 @@
 import TabPanelHeader from '@/Atoms/TabPanelHeader';
-import './index.css';
 import BuySellTabElement from '../BuySellTabElement';
+import './index.css';
+import clsx from 'clsx';
 
-const BuySellTab = () => {
+type Props = {
+	className?: string;
+};
+
+const BuySellTab = (props: Props) => {
+	const { className } = props;
+
 	return (
-		<div className="buysell">
+		<div className={clsx('buysell', className)}>
 			<TabPanelHeader
 				items={[
 					{

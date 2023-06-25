@@ -105,10 +105,20 @@
 
 	.chart-sm-a-tabs {
 		grid-template-columns: repeat(3, minmax(0, 1fr));
+		font-size: 14px;
+		gap: 0px;
+		white-space: nowrap;
+	}
+	.chart-sm-a-tabs .tab_panel--active {
+		font-weight: 700;
 	}
 
 	.chart--wrapper--sm {
 		width: 100%;
+		background-color: #20252b;
+		margin-block: 4px 8px;
+		padding: 10px 8px;
+		border-radius: 8px;
 	}
 
 	.chart-tab-content > * {
@@ -117,5 +127,11 @@
 
 	.chart-tab-content .chart-tab-content--visible {
 		display: block;
+	}
+}
+
+@media (max-width: 576px) {
+	.chart-order {
+		max-width: 100%;
 	}
 }
