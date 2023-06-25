@@ -30,3 +30,31 @@ export const formatOrders = (orders: number[][]): Order[] => {
 		return { price, amount, total };
 	});
 };
+
+export const chartOptions = {
+	height: 300,
+	timeScale: {
+		timeVisible: true,
+		secondsVisible: false,
+	},
+	autoSize: true,
+	layout: {
+		background: {
+			color: '#20252b',
+		},
+		textColor: '#A7B1BC',
+		fontFamily: 'Satoshi, Ubuntu, Arial, sans-serif',
+		fontWeight: 500,
+	},
+	grid: {
+		vertLines: {
+			color: '#1C2127',
+		},
+		horzLines: {
+			color: '#1C2127',
+		},
+	},
+};
+
+export const CANDLE_API_URL =
+	'https://api.binance.com/api/v3/klines?symbol=BTCUSDT&interval=1m&limit=1000';

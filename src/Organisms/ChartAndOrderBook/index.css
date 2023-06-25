@@ -14,7 +14,7 @@
 	max-width: calc(100% - 258px);
 }
 
-.chart_wrapper__time {
+.chart-order .chart_wrapper__time {
 	display: flex;
 	color: #a7b1bc;
 	padding: 16px 0;
@@ -63,4 +63,19 @@
 	color: #393d41;
 	gap: 8px;
 	min-width: 50px;
+}
+
+.chart-order.show-lg {
+	display: none;
+}
+
+@media (max-width: 992px) {
+	.chart-order.hide-lg {
+		display: none;
+	}
+
+	.chart-order.show-lg {
+		display: flex;
+		/* max-width: 100%; */
+	}
 }

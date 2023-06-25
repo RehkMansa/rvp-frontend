@@ -1,43 +1,20 @@
 import PriceChart from '@/Molecules/Chart/PriceChart';
-import './index.css';
-import { CrosshairMode, Time, createChart } from 'lightweight-charts';
-import { useRef, useState } from 'react';
+import { Time, createChart } from 'lightweight-charts';
+import { Fragment, useRef, useState } from 'react';
 import useSingleEffect from '@/hooks/useSingleEffect';
 import ChartTopBar from '@/Atoms/ChartAtoms/ChartTopBar';
 import VolumeChart from '@/Molecules/Chart/VolumeChart';
-import { OrderBOOK, formatOrders } from '@/consts';
+import {
+	CANDLE_API_URL,
+	OrderBOOK,
+	chartOptions,
+	formatOrders,
+} from '@/consts';
 import OrderBook from '@/Molecules/OrderBook';
+import * as Tabs from '@radix-ui/react-tabs';
+import './index.css';
 
-const chartOptions = {
-	height: 300,
-	timeScale: {
-		timeVisible: true,
-		secondsVisible: false,
-	},
-	autoSize: true,
-	layout: {
-		background: {
-			color: '#20252b',
-		},
-		textColor: '#A7B1BC',
-		fontFamily: 'Satoshi, Ubuntu, Arial, sans-serif',
-		fontWeight: 500,
-	},
-	grid: {
-		vertLines: {
-			color: '#1C2127',
-		},
-		horzLines: {
-			color: '#1C2127',
-		},
-	},
-	crosshair: {
-		mode: CrosshairMode.Normal,
-	},
-};
-
-const API_URL =
-	'https://api.binance.com/api/v3/klines?symbol=BTCUSDT&interval=1m&limit=1000';
+const tabHeaders = ['Charts', 'Orderbook', 'Recent trades'];
 
 const ChartAndOrderBook = () => {
 	const priceChart = useRef<HTMLDivElement>(null);
@@ -109,7 +86,7 @@ const ChartAndOrderBook = () => {
 				const volumeSeries = volumeSeriesChart.addHistogramSeries();
 
 				/** fetch initial data/history */
-				fetch(API_URL)
+				fetch(CANDLE_API_URL)
 					.then((res) => res.json())
 					.then((data: Array<Array<string>>) => {
 						const cdata = data.map((d) => ({
@@ -160,20 +137,41 @@ const ChartAndOrderBook = () => {
 			}
 		};
 
-		console.log('...hello world');
-
 		setCanvas();
 	}, []);
 
 	return (
-		<div className="chart-order">
-			<div className="chart_wrapper">
-				<ChartTopBar />
-				<PriceChart ref={priceChart} />
-				<VolumeChart ref={volumeChart} />
+		<Fragment>
+			{/** this shows up for only lg screen upwards ::>900px  */}
+			<div className="chart-order hide-lg">
+				<div className="chart_wrapper">
+					<ChartTopBar />
+					<PriceChart ref={priceChart} />
+					<VolumeChart ref={volumeChart} />
+				</div>
+				<OrderBook loading={loading} orderBook={orderBook} />
 			</div>
-			<OrderBook loading={loading} orderBook={orderBook} />
-		</div>
+			<div className="chart-order show-lg">
+				<Tabs.Root defaultValue={tabHeaders[1]}>
+					<Tabs.List>
+						{tabHeaders.map((ele) => (
+							<Tabs.Trigger value={ele}>{ele}</Tabs.Trigger>
+						))}
+					</Tabs.List>
+					<Tabs.Content value={tabHeaders[0]}>
+						<ChartTopBar />
+						<PriceChart ref={priceChart} />
+						<VolumeChart ref={volumeChart} />
+					</Tabs.Content>
+					<Tabs.Content value={tabHeaders[1]}>
+						<OrderBook loading={loading} orderBook={orderBook} />
+					</Tabs.Content>
+					<Tabs.Content value={tabHeaders[2]}>
+						<div>N/A</div>
+					</Tabs.Content>
+				</Tabs.Root>
+			</div>
+		</Fragment>
 	);
 };
 
