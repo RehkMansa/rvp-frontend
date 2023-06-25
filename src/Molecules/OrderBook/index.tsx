@@ -1,73 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import { useState } from 'react';
 import './index.css';
 import OrderBookHeader from '@/Atoms/OrderBookAtoms/OrderBookHeader';
 import TabPanelHeader from '@/Atoms/TabPanelHeader';
 import OrderBookTopBar from '@/Atoms/OrderBookAtoms/OrderBookTopBar';
 import OrderBookRow from '@/Atoms/OrderBookAtoms/OrderBookRow';
 import OrderBookPriceRange from '@/Atoms/OrderBookAtoms/OrderBookPriceRange';
+import { OrderBOOK } from '@/consts';
 
-interface Order {
-	price: number;
-	amount: number;
-	total: number;
-}
+type Props = {
+	orderBook: OrderBOOK;
+	loading: boolean;
+};
 
-const OrderBook: React.FC = () => {
-	const [orderBook, setOrderBook] = useState<{
-		bids: Order[];
-		asks: Order[];
-	}>({
-		bids: [],
-		asks: [],
-	});
-
-	const [loading, setLoading] = useState(true);
+const OrderBook = (props: Props) => {
+	const { orderBook, loading } = props;
 
 	const [activeFilter, setActiveFilter] = useState(10);
-
-	const formatOrders = (orders: number[][]): Order[] => {
-		return orders.map(([price, amount]) => {
-			const total = price * amount;
-			return { price, amount, total };
-		});
-	};
-
-	useEffect(() => {
-		// Fetch order book data
-		const fetchOrderBook = async () => {
-			setLoading(true);
-			try {
-				const response = await fetch(
-					'https://api.binance.com/api/v3/depth?symbol=BTCUSDT&limit=5'
-				);
-				const data = await response.json();
-
-				setOrderBook({
-					bids: formatOrders(data.bids),
-					asks: formatOrders(data.asks),
-				});
-			} catch (error) {
-				console.error('Error retrieving order book:', error);
-			} finally {
-				setLoading(false);
-			}
-		};
-
-		fetchOrderBook();
-
-		const stream = new WebSocket(
-			'wss://stream.binance.com:9443/ws/btcusdt@depth'
-		);
-
-		stream.onmessage = (event) => {
-			const data = JSON.parse(event.data);
-
-			setOrderBook({
-				asks: formatOrders(data.a.slice(0, 5)),
-				bids: formatOrders(data.b.slice(0, 5)),
-			});
-		};
-	}, []);
 
 	if (loading) return <div className="orderbook" />;
 
