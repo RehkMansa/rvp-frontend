@@ -10,20 +10,30 @@ type Items = {
 
 type Props = {
 	items: Items[];
+	className?: string;
+	onClick?(name: string): void;
+	selected?: string;
 };
 
 /** memorizing it so it doesnt update unless props change */
-const TabPanelHeader = memo(({ items }: Props) => (
-	<div className="tab_panel text-gray">
-		{items.map(({ name, className, isActive }) => (
-			<div
-				key={name}
-				className={clsx(isActive && 'tab_panel--active', className)}
-			>
-				{name}
-			</div>
-		))}
-	</div>
-));
+const TabPanelHeader = memo(
+	({ items, className, onClick, selected }: Props) => (
+		<div className={clsx('tab_panel text-gray', className)}>
+			{items.map(({ name, className, isActive }) => (
+				<button
+					key={name}
+					type="button"
+					onClick={() => onClick?.(name)}
+					className={clsx(
+						(isActive || selected === name) && 'tab_panel--active',
+						className
+					)}
+				>
+					{name}
+				</button>
+			))}
+		</div>
+	)
+);
 
 export default TabPanelHeader;

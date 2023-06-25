@@ -2,6 +2,7 @@ import { Fragment } from 'react';
 import TopInfo from '@/Organisms/TopInfo';
 import ChartAndOrderBook from '@/Organisms/ChartAndOrderBook';
 import BuySellTab from '@/Organisms/BuySellTab';
+import OptionWrapper from '@/Organisms/OptionWrapper';
 import './index.css';
 
 const HomePage = () => (
@@ -10,7 +11,7 @@ const HomePage = () => (
 		<div className="chart-container">
 			<div className="chat-container--wrapped">
 				<ChartAndOrderBook />
-				<p>hello world</p>
+				<OptionWrapper />
 			</div>
 			<BuySellTab className="chart-container__buysell" />
 		</div>
