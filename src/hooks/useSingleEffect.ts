@@ -5,7 +5,7 @@ import { useEffect, useRef } from 'react';
  *
  * 	Why? When application is deployed as a build, React would not run effects twice, vs when deployed as a node app
  * @see https://www.youtube.com/watch?v=81faZzp18NM */
-const useSingleEffect = (effect: () => void, dependencies: any[]) => {
+const useSingleEffect = (effect: () => void, dependencies: unknown[]) => {
 	const hasMountedRef = useRef(true);
 
 	useEffect(() => {
